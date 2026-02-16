@@ -1,0 +1,17 @@
+{
+  "name": "Forge Creator",
+  "short_name": "Forge",
+  "description": "Create your Forge the Kingdom character portrait",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1a1028",
+  "theme_color": "#1a1028",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%231a1028'/><path d='M128 320l48-160 16 80 64-200 64 200 16-80 48 160z' fill='%23f1c40f' stroke='%23c9a80a' stroke-width='8'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

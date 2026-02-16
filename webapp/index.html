@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a1028">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Forge Creator</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231a1028'/><text x='32' y='46' text-anchor='middle' font-size='36'>👑</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='32' fill='%231a1028'/><text x='90' y='125' text-anchor='middle' font-size='100'>👑</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <!-- HEADER -->
+  <header>
+    <h1>👑 Forge Creator</h1>
+    <p class="subtitle">Merith paints your portrait. Results may vary.</p>
+  </header>
+
+  <!-- SCREEN: Creator -->
+  <section id="screen-creator" class="screen active">
+    <div class="card">
+      <label for="inp-name">Your Name, Ruler</label>
+      <input type="text" id="inp-name" placeholder="Enter your name..." maxlength="40">
+    </div>
+
+    <div class="card">
+      <label>Background</label>
+      <div class="btn-group" data-field="background">
+        <button data-val="warrior" class="sel-btn">⚔️ Warrior</button>
+        <button data-val="scholar" class="sel-btn">📚 Scholar</button>
+        <button data-val="rogue" class="sel-btn">🗡️ Rogue</button>
+        <button data-val="mystic" class="sel-btn">🔮 Mystic</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Build</label>
+      <div class="btn-group" data-field="build">
+        <button data-val="imposing" class="sel-btn">🏔️ Imposing</button>
+        <button data-val="average" class="sel-btn">🧍 Average</button>
+        <button data-val="slight" class="sel-btn">💨 Slight</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Enhancement</label>
+      <div class="btn-group" data-field="augmentation">
+        <button data-val="organic" class="sel-btn">🌿 Natural</button>
+        <button data-val="cybernetic" class="sel-btn">⚙️ Cybernetic</button>
+        <button data-val="psychic" class="sel-btn">🧠 Psychic</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label for="inp-desc">Description <span class="hint">Go wild. Merith paints what you describe.</span></label>
+      <textarea id="inp-desc" rows="3" placeholder="Red hair, scar across left eye, holding a flaming sword..."></textarea>
+    </div>
+
+    <div class="card">
+      <label for="sel-model">Model</label>
+      <select id="sel-model">
+        <option value="gemini-3-pro-image-preview">🍌 Nano Banana Pro (default)</option>
+        <option value="gemini-2.5-flash-image">⚡ 2.5 Flash</option>
+        <option value="imagen-4.0-ultra-generate-001">🖼️ Imagen 4 Ultra</option>
+        <option value="gemini-2.0-flash-exp-image-generation">🎨 2.0 Classic</option>
+      </select>
+      <p class="hint" id="model-hint">10 req/min · Best quality</p>
+    </div>
+
+    <div class="card">
+      <label for="inp-key">Gemini API Key</label>
+      <input type="password" id="inp-key" placeholder="AIza...">
+      <p class="hint">Saved locally. Never sent anywhere but Google.</p>
+    </div>
+
+    <button id="btn-paint" class="btn-primary">🎨 Paint My Portrait</button>
+    <button id="btn-gallery" class="btn-secondary" style="margin-top:0.5rem">🖼️ Gallery</button>
+  </section>
+
+  <!-- SCREEN: Painting -->
+  <section id="screen-painting" class="screen">
+    <div class="painting-anim">
+      <div class="easel">🎨</div>
+      <p class="painting-status">Merith is painting...</p>
+      <p class="painting-quote" id="merith-quote"></p>
+      <div class="spinner"></div>
+    </div>
+  </section>
+
+  <!-- SCREEN: Portrait Reveal -->
+  <section id="screen-portrait" class="screen">
+    <h2 id="portrait-name" class="portrait-title"></h2>
+    <div class="portrait-frame">
+      <img id="portrait-img" alt="Your portrait">
+    </div>
+    <div class="portrait-actions">
+      <button id="btn-download" class="btn-secondary">💾 Save</button>
+      <button id="btn-share" class="btn-secondary">📤 Share</button>
+      <button id="btn-repaint" class="btn-secondary">🔄 Repaint</button>
+      <button id="btn-back" class="btn-secondary">← Back</button>
+    </div>
+  </section>
+
+  <!-- SCREEN: Gallery -->
+  <section id="screen-gallery" class="screen">
+    <h2>🖼️ Gallery</h2>
+    <div id="gallery-grid" class="gallery-grid"></div>
+    <button id="btn-gallery-back" class="btn-secondary" style="margin-top:1rem">← Back</button>
+  </section>
+
+  <div id="toast" class="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

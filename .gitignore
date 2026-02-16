@@ -1,0 +1,34 @@
+# API Keys — NEVER commit
+game/api-keys.conf
+
+# Python
+*.pyc
+__pycache__/
+
+# Ren'Py compiled
+*.rpyc
+
+# Ren'Py runtime
+cache/
+saves/
+tmp/
+log.txt
+traceback.txt
+errors.txt
+
+# Generated custom portraits (user-specific)
+game/images/char/custom/
+
+# Distribution builds
+dist/
+build/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Large binaries
+*.zip
+*.tar.gz
+*.dmg
+*.exe
