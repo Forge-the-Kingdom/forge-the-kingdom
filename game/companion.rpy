@@ -321,7 +321,7 @@ label companion_ch6:
             call screen dev_note( \
                 title="Chapter 6: Relight the Forge", \
                 tool_name="Forge (Autonomous Dev Loop)", \
-                tool_url="https://github.com/frankbria/forge-dev-loop", \
+                tool_url="https://github.com/anna-claudette/forge-the-kingdom", \
                 metaphor="Where Golems are born — autonomous agents animated by magical Elixir templates. The furnace roars, anvils gleam, molds line the walls.", \
                 reality="Forge is an autonomous development tool. It creates 'Golems' — AI coding agents that work independently on tasks. 'Elixirs' are specialist templates (fullstack dev, security expert, etc.) that give each Golem its expertise. Think of it as an AI factory that produces AI workers.", \
                 tip="Run 'forge --monitor' to summon a Golem with a live dashboard. Use 'forge brew fullstack' to apply the fullstack developer template to your project." \
